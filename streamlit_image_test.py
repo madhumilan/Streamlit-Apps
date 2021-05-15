@@ -6,11 +6,13 @@ from keras.preprocessing import image
 
 os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 
+'''
 path = "C:/Users/madhu/AppData/Local/Programs/Python/Python38/NeuralNetScratch/"
 dataset = os.path.join(path,"cats-and-dogs/")
 print(dataset)
+'''
 
-loaded_model = tf.keras.models.load_model(dataset)
+loaded_model = tf.keras.models.load_model('.')
 
 def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
