@@ -3,7 +3,6 @@ import streamlit as st
 import numpy as np
 import tensorflow as tf
 from keras.preprocessing import image
-from PIL import Image
 
 os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 
@@ -33,7 +32,7 @@ if __name__ == '__main__':
         x = np.expand_dims(img, axis=0)
 
         output = loaded_model.predict(x)
-        st.image(Image.open(filename), caption="Selected image")
+        st.image(img, caption="Selected image")
         if(output < 0.5):
             st.write("It is a cat.")
         else:
