@@ -1,1 +1,4 @@
 tensorflow
+numpy
+keras.preprocessing
+PIL
