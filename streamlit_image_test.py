@@ -12,7 +12,7 @@ dataset = os.path.join(path,"cats-and-dogs/")
 print(dataset)
 '''
 path = os.getcwd()
-loaded_model = tf.keras.models.load_model(os.path.join(path,'cats-and-dogs'))
+loaded_model = tf.keras.models.load_model(os.path.join(path,'model.h5'))
 
 def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
