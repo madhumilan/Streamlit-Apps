@@ -18,11 +18,12 @@ def file_selector(folder_path='.'):
 
 if __name__ == '__main__':
     # Select a file
-    if st.checkbox('Select a file in current directory'):
-        folder_path = '.'
-        if st.checkbox('Change directory'):
-            st.write("Enter test_images and hit Enter")
-            folder_path = st.text_input('Test Images Folder', 'test_images')
+    st.write("Select an image to test the classifier.")
+    if st.checkbox('Select an image'):
+        folder_path = st.text_input('Test Images Folder', 'test_images')
+#         if st.checkbox('Change directory'):
+#             st.write("Enter test_images and hit Enter")
+#             folder_path = st.text_input('Test Images Folder', 'test_images')
         filename = file_selector(folder_path=folder_path)
         st.write('You selected `%s`' % filename)
 
