@@ -19,13 +19,15 @@ def file_selector(folder_path='.'):
 if __name__ == '__main__':
     # Select a file
     st.write("Select an image to test the classifier.")
-    if st.checkbox('Select an image'):
+    if st.checkbox('Click to select'):
         folder_path = st.text_input('Test Images Folder', 'test_images')
 #         if st.checkbox('Change directory'):
 #             st.write("Enter test_images and hit Enter")
 #             folder_path = st.text_input('Test Images Folder', 'test_images')
         filename = file_selector(folder_path=folder_path)
+        filename = filename[filename.index('/'):]
         st.write('You selected `%s`' % filename)
+        st.write('Choose a different image using the drop down')
 
         img = image.load_img(filename, target_size=(150,150,3))
         x = image.img_to_array(img)
