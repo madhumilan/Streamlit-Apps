@@ -6,11 +6,7 @@ from keras.preprocessing import image
 
 os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 
-'''
-path = "C:/Users/madhu/AppData/Local/Programs/Python/Python38/NeuralNetScratch/"
-dataset = os.path.join(path,"cats-and-dogs/")
-print(dataset)
-'''
+st.title("Cats v/s Dogs Classifier")
 
 loaded_model = tf.keras.models.load_model('my_model')
 
@@ -25,7 +21,8 @@ if __name__ == '__main__':
     if st.checkbox('Select a file in current directory'):
         folder_path = '.'
         if st.checkbox('Change directory'):
-            folder_path = st.text_input('Enter folder path', '.')
+            st.write("Enter test_images and hit Enter")
+            folder_path = st.text_input('Test Images Folder', 'test_images')
         filename = file_selector(folder_path=folder_path)
         st.write('You selected `%s`' % filename)
 
